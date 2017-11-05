@@ -1,6 +1,5 @@
 var express = require('express');
 var userCtrl = require('../controllers/user');
-var docCtrl = require('../controllers/doc');
 
 var router = express.Router();
 
