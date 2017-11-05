@@ -1,14 +1,16 @@
 var express = require('express');
 const bodyParser = require('body-parser');
 var path = require("path");
+const config = require('config');
 
 var app = express();
 var mongoose = require('mongoose');
 
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://mongo:27017/data');
+mongoose.connect(config.DBHost);
 
 var routes = require('./routes/routes');
 
