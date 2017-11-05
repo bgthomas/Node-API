@@ -14,5 +14,10 @@
         "express": "^4.16.2",
         "mongoose": "^4.12.6",
         "nodemon": "^1.12.1"
+    },
+    "apidoc": {
+        "title": "User API documentation",
+        "url": "https://api.github.com/v1"
     }
+
 }
