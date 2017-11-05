@@ -23,13 +23,6 @@ module.exports = {
      *       "created": "2017-11-05T13:18:02"
      *     }
      *
-     * @apiError UserNotFound User with given id was not found.
-     *
-     * @apiErrorExample Error-Response:
-     *     HTTP/1.1 404 Not Found
-     *     {
-     *       "error": "UserNotFound"
-     *     }
      */
 
     getUser: function(req, res) {
@@ -85,6 +78,25 @@ module.exports = {
         });
 
     },
+
+    /**
+     * @api {post} /users/ Add new User
+     * @apiName addUser
+     * @apiGroup User
+     *
+     * @apiParam {String} email Users email address.
+     * @apiParam {String} forname Users forname.
+     * @apiParam {String} surname Users surname.
+     *
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *       "message":"User created!"
+     *     }
+     *
+     */
+
     postUser: function(req, res) {
 
         var user = new User(
@@ -109,6 +121,24 @@ module.exports = {
         });
 
     },
+
+    /**
+     * @api {post} /users/:id Update User
+     * @apiName updateUser
+     * @apiGroup User
+     *
+     * @apiParam {String} id User id.   
+     * @apiParam {String} [email] Users email address.
+     * @apiParam {String} [forname] Users forname.
+     * @apiParam {String} [surname] Users surname.
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *       message: 'User updated!'
+     *     }
+     *
+     */
 
     updateUser: function(req, res) {
 
@@ -136,6 +166,21 @@ module.exports = {
 
     },
 
+
+    /**
+     * @api {delete} /users/:id Delete User
+     * @apiName deleteUser
+     * @apiGroup User
+     *
+     * @apiParam {String} id User id.   
+     *
+     * @apiSuccessExample Success-Response:
+     *     HTTP/1.1 200 OK
+     *     {
+     *       message: 'User deleted'
+     *     }
+     *
+     */
     deleteUser: function(req, res) {
 
         User.remove({
@@ -146,7 +191,7 @@ module.exports = {
             if (err)
                 res.send(err);
 
-            res.json({ message: 'User deleted' });
+            res.json({ message: 'User deleted!' });
 
         });
 
