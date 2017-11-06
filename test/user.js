@@ -1,3 +1,5 @@
+'use strict';
+
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
 
@@ -37,7 +39,7 @@ describe('Users', () => {
      */
     describe('/GET/:id user', () => {
         it('it should GET user by supplied id', (done) => {
-            var user = new User({
+            let user = new User({
                 email: "ben@ben.com",
                 forname: "Ben",
                 surname: "thomas"
@@ -63,7 +65,7 @@ describe('Users', () => {
      */
     describe('/POST User', () => {
         it('it should POST a user', (done) => {
-            var user = {
+            let user = {
                 email: "ben@ben.com",
                 forname: "Ben"
             }
@@ -87,7 +89,7 @@ describe('Users', () => {
      */
     describe('/DELETE/:id User', () => {
         it('it should DELETE user by supplied id', (done) => {
-            var user = new User({
+            let user = new User({
                 email: "ben@ben.com",
                 forname: "Ben",
                 surname: "thomas"
@@ -99,6 +101,34 @@ describe('Users', () => {
                         res.should.have.status(200);
                         res.body.should.be.a('object');
                         res.body.should.have.property('message').eql("User deleted!");
+                        done();
+                    });
+            });
+        });
+    });
+
+    /* 
+     *
+     * Test the /PUT route
+     */
+    describe('/PUT/:id book', () => {
+        it('it should UPDATE a user given an id', (done) => {
+            let user = new User({
+                email: "ben@ben.com",
+                forname: "Ben",
+                surname: "Thomas"
+            });
+            user.save((err, user) => {
+                chai.request(server)
+                    .put('/api/users/' + user.id)
+                    .send({ email: "pip@pip.com", forname: "Pippa", surname: "Thomas" })
+                    .end((err, res) => {
+                        res.should.have.status(200);
+                        res.body.should.be.a('object');
+                        res.body.should.have.property('message').eql('User updated!');
+                        res.body.user.should.have.property('email').eql('pip@pip.com');
+                        res.body.user.should.have.property('forname').eql('Pippa');
+                        res.body.user.should.have.property('surname').eql('Thomas');
                         done();
                     });
             });
