@@ -35,7 +35,7 @@ describe('Users', () => {
     /*
      * Test the /GET/:id route
      */
-    describe('/GET user', () => {
+    describe('/GET/:id user', () => {
         it('it should GET user by supplied id', (done) => {
             var user = new User({
                 email: "ben@ben.com",
@@ -58,8 +58,6 @@ describe('Users', () => {
         });
     });
 
-
-
     /*
      * Test the /POST route
      */
@@ -81,6 +79,29 @@ describe('Users', () => {
                     res.body.should.have.property('sername');
                     done();
                 });
+        });
+    });
+
+    /*
+     * Test the /DELETE route
+     */
+    describe('/DELETE/:id User', () => {
+        it('it should DELETE user by supplied id', (done) => {
+            var user = new User({
+                email: "ben@ben.com",
+                forname: "Ben",
+                surname: "thomas"
+            });
+            user.save((err, user) => {
+                chai.request(server)
+                    .delete('/api/users/' + user.id)
+                    .end((err, res) => {
+                        res.should.have.status(200);
+                        res.body.should.be.a('object');
+                        res.body.should.have.property('message').eql("User deleted!");
+                        done();
+                    });
+            });
         });
     });
 
