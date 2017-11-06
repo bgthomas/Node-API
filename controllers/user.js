@@ -154,11 +154,10 @@ module.exports = {
 
             user.save(function(err) {
 
-                if (err) {
+                if (err)
                     res.send(err);
-                }
 
-                res.json({ message: 'User updated!' });
+                res.json({ message: 'User updated!', user });
 
             });
 
