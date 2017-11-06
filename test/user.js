@@ -3,8 +3,6 @@ process.env.NODE_ENV = 'test';
 
 var mongoose = require("mongoose");
 var User = require('../models/user');
-
-//Require the dev-dependencies
 var chai = require('chai');
 var chaiHttp = require('chai-http');
 var server = require('../app');
