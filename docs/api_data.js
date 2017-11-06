@@ -151,7 +151,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"message\":\"User created!\"\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"message\":\"User created!\",\n  \"user\": {\n      \"email\": \"Ben@ben.com\",\n      \"forname\": \"Ben\",\n      \"surname\": \"Thomas\",\n      \"created\": \"2017-11-05T13:18:02\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -236,7 +236,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n  message: 'User updated!'\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  message: 'User updated!',\n  \"user\": {\n      \"email\": \"Ben@ben.com\",\n      \"forname\": \"Ben\",\n      \"surname\": \"Thomas\",\n      \"created\": \"2017-11-05T13:18:02\"\n  }\n}",
           "type": "json"
         }
       ]

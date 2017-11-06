@@ -22,8 +22,9 @@
         "mocha": "^2.4.5"
     },
     "apidoc": {
-        "title": "User API documentation",
-        "url": "https://api.github.com/v1"
+        "title": "User API",
+        "url": "https://api.github.com/v1",
+        "name": "User API Documentation"
     }
 
 }

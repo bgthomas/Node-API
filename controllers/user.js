@@ -92,9 +92,14 @@ module.exports = {
      * @apiSuccessExample Success-Response:
      *     HTTP/1.1 200 OK
      *     {
-     *       "message":"User created!"
+     *       "message":"User created!",
+     *       "user": {
+     *           "email": "Ben@ben.com",
+     *           "forname": "Ben",
+     *           "surname": "Thomas",
+     *           "created": "2017-11-05T13:18:02"
+     *       }
      *     }
-     *
      */
 
     postUser: function(req, res) {
@@ -133,7 +138,13 @@ module.exports = {
      * @apiSuccessExample Success-Response:
      *     HTTP/1.1 200 OK
      *     {
-     *       message: 'User updated!'
+     *       message: 'User updated!',
+     *       "user": {
+     *           "email": "Ben@ben.com",
+     *           "forname": "Ben",
+     *           "surname": "Thomas",
+     *           "created": "2017-11-05T13:18:02"
+     *       }
      *     }
      *
      */
@@ -184,7 +195,7 @@ module.exports = {
 
             _id: req.params.user_id
 
-        }, function(err, bear) {
+        }, function(err, user) {
             if (err)
                 res.send(err);
 
