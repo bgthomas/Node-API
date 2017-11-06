@@ -32,6 +32,33 @@ describe('Users', () => {
         });
     });
 
+    /*
+     * Test the /GET/:id route
+     */
+    describe('/GET user', () => {
+        it('it should GET user by supplied id', (done) => {
+            var user = new User({
+                email: "ben@ben.com",
+                forname: "Ben",
+                surname: "thomas"
+            });
+            user.save((err, user) => {
+                chai.request(server)
+                    .get('/api/users/' + user.id)
+                    .end((err, res) => {
+                        res.should.have.status(200);
+                        res.body.should.be.a('object');
+                        res.body.should.have.property('email');
+                        res.body.should.have.property('forname');
+                        res.body.should.have.property('surname');
+                        res.body.should.have.property('_id').eql(user.id);
+                        done();
+                    });
+            });
+        });
+    });
+
+
 
     /*
      * Test the /POST route
@@ -49,9 +76,9 @@ describe('Users', () => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('message').eql('User created!');
-                    res.body.user.should.have.property('email');
-                    res.body.user.should.have.property('forname');
-                    res.body.user.should.have.property('sername');
+                    res.body.should.have.property('email');
+                    res.body.should.have.property('forname');
+                    res.body.should.have.property('sername');
                     done();
                 });
         });
