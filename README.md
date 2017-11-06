@@ -29,7 +29,7 @@ For example endpoints and documentation please [HERE](https://www.google.com)
 
 For more help on apidocjs see [HERE](http://apidocjs.com/) 
 
-##What's next?
+## What's next?
 
 1. Way more error handling and data validation on controller methods.
 2. More test cases - Checking for required fields etc.
