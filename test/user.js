@@ -67,7 +67,8 @@ describe('Users', () => {
         it('it should POST a user', (done) => {
             let user = {
                 email: "ben@ben.com",
-                forname: "Ben"
+                forname: "Ben",
+                surname: "Thomas"
             }
             chai.request(server)
                 .post('/api/users')
@@ -76,9 +77,9 @@ describe('Users', () => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('message').eql('User created!');
-                    res.body.should.have.property('email');
-                    res.body.should.have.property('forname');
-                    res.body.should.have.property('sername');
+                    res.body.user.should.have.property('email');
+                    res.body.user.should.have.property('forname');
+                    res.body.user.should.have.property('surname');
                     done();
                 });
         });

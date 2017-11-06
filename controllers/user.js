@@ -112,6 +112,7 @@ module.exports = {
         user.save(function(err) {
 
             if (err)
+
                 res.send(err);
 
             res.json({ message: 'User created!', user });
