@@ -116,7 +116,7 @@ module.exports = {
 
                 res.send(err);
 
-            res.json({ message: 'User created!' });
+            res.json({ message: 'User created!', user });
 
         });
 

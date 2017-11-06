@@ -37,11 +37,10 @@ describe('Users', () => {
      * Test the /POST route
      */
     describe('/POST User', () => {
-        it('it should not post a user without email,forname,surname', (done) => {
+        it('it should POST a user', (done) => {
             var user = {
                 email: "ben@ben.com",
-                forname: "Ben",
-                surname: "Thomas"
+                forname: "Ben"
             }
             chai.request(server)
                 .post('/api/users')
@@ -49,9 +48,10 @@ describe('Users', () => {
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
-                    res.body.should.have.property('errors');
-                    res.body.errors.should.have.property('pages');
-                    res.body.errors.pages.should.have.property('kind').eql('required');
+                    res.body.should.have.property('message').eql('User created!');
+                    res.body.user.should.have.property('email');
+                    res.body.user.should.have.property('forname');
+                    res.body.user.should.have.property('sername');
                     done();
                 });
         });
