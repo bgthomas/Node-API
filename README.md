@@ -16,6 +16,7 @@ For example endpoints and documentation please [HERE](https://www.google.com)
 
 ## To run tests locally via docker
 `docker-compose run web npm test`
+
 ![alt text](https://github.com/bgthomas/Node-API/blob/master/testing.gif "test GIF")
 
 ## To generate documentation locally 
