@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "mocha --timeout 10000",
-        "start": "nodemon app.js"
+        "start": "node app.js"
     },
     "author": "Ben Thomas",
     "license": "ISC",
@@ -13,7 +13,6 @@
         "body-parser": "^1.18.2",
         "express": "^4.16.2",
         "mongoose": "^4.12.6",
-        "nodemon": "^1.12.1",
         "config": "^1.20.1"
     },
     "devDependencies": {
