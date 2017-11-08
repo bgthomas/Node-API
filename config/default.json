@@ -1,3 +1,3 @@
 {
-    "DBHost": ""
+    "DBHost": "mongodb://mongo:27017/data"
 }

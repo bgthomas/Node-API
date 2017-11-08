@@ -19,7 +19,9 @@ app.use('/api', routes);
 //documentation routes
 app.use('/docs', express.static(path.join(__dirname + '/docs')));
 
-const server = app.listen(3000, function() {
+var port = process.env.PORT || 3000;
+
+const server = app.listen(port, function() {
     console.log('Example app listening on port 3000!');
 });
 
