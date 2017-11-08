@@ -22,7 +22,7 @@
     },
     "apidoc": {
         "title": "User API",
-        "url": "https://api.github.com/v1",
+        "url": "https://enigmatic-wildwood-36741.herokuapp.com/api",
         "name": "User API Documentation"
     }
 

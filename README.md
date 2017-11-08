@@ -10,9 +10,10 @@ This project uses the following technologies:
 
 1. `git clone`
 2. Edit the enviroment config files (/config/default.json for example) with your DB connection details.
+1. `npm install`
 3. `docker-compose up`
 
-For example endpoints and documentation please [HERE](https://www.google.com)
+For example endpoints and documentation please [HERE](https://enigmatic-wildwood-36741.herokuapp.com/docs/)
 
 ## To run tests locally via docker
 `docker-compose run web npm test`
@@ -25,7 +26,7 @@ For example endpoints and documentation please [HERE](https://www.google.com)
 
 `cd <to your app path>`
 
-`apidoc -i <controller path> -o docs/`
+`apidoc -i C:\Users\Ben\Documents\Node-API\controllers -o docs/`
 
 For more help on apidocjs see [HERE](http://apidocjs.com/) 
 
