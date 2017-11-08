@@ -24,7 +24,11 @@ For example endpoints and documentation please [HERE](https://enigmatic-wildwood
 
 `npm install apidoc -g`
 
-`cd <to your app path>`
+Replacing system path with your path
+
+`cd C:\Users\Ben\Documents\Node-API\`
+
+Replacing system path with your path
 
 `apidoc -i C:\Users\Ben\Documents\Node-API\controllers -o docs/`
 
