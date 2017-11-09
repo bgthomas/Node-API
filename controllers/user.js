@@ -10,7 +10,7 @@ module.exports = {
      * @apiParam {String} id Users unique ID.
      *
      * @apiSuccess {String} email Email Address of the User.
-     * @apiSuccess {String} forname  Forname of the User.
+     * @apiSuccess {String} forename  forename of the User.
      * @apiSuccess {String} surname surname of the User.
      * @apiSuccess {Date} created Date/time the User was created.
      *
@@ -18,7 +18,7 @@ module.exports = {
      *     HTTP/1.1 200 OK
      *     {
      *       "email": "Ben@ben.com",
-     *       "forname": "Ben",
+     *       "forename": "Ben",
      *       "surname": "Thomas",
      *       "created": "2017-11-05T13:18:02"
      *     }
@@ -45,7 +45,7 @@ module.exports = {
      * @apiGroup User
      *  
      * @apiSuccess {String} email Email Address of the User.
-     * @apiSuccess {String} forname  Forname of the User.
+     * @apiSuccess {String} forename  forename of the User.
      * @apiSuccess {String} surname surname of the User.
      * @apiSuccess {Date} created Date/time the User was created.
      *
@@ -53,13 +53,13 @@ module.exports = {
      *     HTTP/1.1 200 OK
      *     {
      *       "email": "Ben@ben.com",
-     *       "forname": "Ben",
+     *       "forename": "Ben",
      *       "surname": "Thomas",
      *       "created": "2017-11-05T13:18:02"
      *     }
      *     {
      *       "email": "pippa@pippa.com",
-     *       "forname": "Pippa",
+     *       "forename": "Pippa",
      *       "surname": "Thomas",
      *       "created": "2017-11-05T13:18:02"
      *     }
@@ -85,7 +85,7 @@ module.exports = {
      * @apiGroup User
      *
      * @apiParam {String} email Users email address.
-     * @apiParam {String} forname Users forname.
+     * @apiParam {String} forename Users forename.
      * @apiParam {String} surname Users surname.
      *
      *
@@ -95,7 +95,7 @@ module.exports = {
      *       "message":"User created!",
      *       "user": {
      *           "email": "Ben@ben.com",
-     *           "forname": "Ben",
+     *           "forename": "Ben",
      *           "surname": "Thomas",
      *           "created": "2017-11-05T13:18:02"
      *       }
@@ -108,7 +108,7 @@ module.exports = {
 
             {
                 email: req.body.email,
-                forname: req.body.forname,
+                forename: req.body.forename,
                 surname: req.body.surname
             }
 
@@ -132,7 +132,7 @@ module.exports = {
      *
      * @apiParam {String} id User id.   
      * @apiParam {String} [email] Users email address.
-     * @apiParam {String} [forname] Users forname.
+     * @apiParam {String} [forename] Users forename.
      * @apiParam {String} [surname] Users surname.
      *
      * @apiSuccessExample Success-Response:
@@ -141,7 +141,7 @@ module.exports = {
      *       message: 'User updated!',
      *       "user": {
      *           "email": "Ben@ben.com",
-     *           "forname": "Ben",
+     *           "forename": "Ben",
      *           "surname": "Thomas",
      *           "created": "2017-11-05T13:18:02"
      *       }
@@ -158,7 +158,7 @@ module.exports = {
                 res.send(err);
 
             user.email = req.body.email;
-            user.forname = req.body.forname;
+            user.forename = req.body.forename;
             user.surname = req.body.surname;
 
             user.save(function(err) {

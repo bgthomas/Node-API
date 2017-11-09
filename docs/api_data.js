@@ -32,8 +32,8 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "forname",
-            "description": "<p>Forname of the User.</p>"
+            "field": "forename",
+            "description": "<p>forename of the User.</p>"
           },
           {
             "group": "Success 200",
@@ -54,7 +54,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"email\": \"Ben@ben.com\",\n  \"forname\": \"Ben\",\n  \"surname\": \"Thomas\",\n  \"created\": \"2017-11-05T13:18:02\"\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"email\": \"Ben@ben.com\",\n  \"forename\": \"Ben\",\n  \"surname\": \"Thomas\",\n  \"created\": \"2017-11-05T13:18:02\"\n}",
           "type": "json"
         }
       ]
@@ -83,8 +83,8 @@ define({ "api": [
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "forname",
-            "description": "<p>Forname of the User.</p>"
+            "field": "forename",
+            "description": "<p>forename of the User.</p>"
           },
           {
             "group": "Success 200",
@@ -105,7 +105,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"email\": \"Ben@ben.com\",\n  \"forname\": \"Ben\",\n  \"surname\": \"Thomas\",\n  \"created\": \"2017-11-05T13:18:02\"\n}\n{\n  \"email\": \"pippa@pippa.com\",\n  \"forname\": \"Pippa\",\n  \"surname\": \"Thomas\",\n  \"created\": \"2017-11-05T13:18:02\"\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"email\": \"Ben@ben.com\",\n  \"forename\": \"Ben\",\n  \"surname\": \"Thomas\",\n  \"created\": \"2017-11-05T13:18:02\"\n}\n{\n  \"email\": \"pippa@pippa.com\",\n  \"forename\": \"Pippa\",\n  \"surname\": \"Thomas\",\n  \"created\": \"2017-11-05T13:18:02\"\n}",
           "type": "json"
         }
       ]
@@ -134,8 +134,8 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "forname",
-            "description": "<p>Users forname.</p>"
+            "field": "forename",
+            "description": "<p>Users forename.</p>"
           },
           {
             "group": "Parameter",
@@ -151,7 +151,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"message\":\"User created!\",\n  \"user\": {\n      \"email\": \"Ben@ben.com\",\n      \"forname\": \"Ben\",\n      \"surname\": \"Thomas\",\n      \"created\": \"2017-11-05T13:18:02\"\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"message\":\"User created!\",\n  \"user\": {\n      \"email\": \"Ben@ben.com\",\n      \"forename\": \"Ben\",\n      \"surname\": \"Thomas\",\n      \"created\": \"2017-11-05T13:18:02\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -219,8 +219,8 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": true,
-            "field": "forname",
-            "description": "<p>Users forname.</p>"
+            "field": "forename",
+            "description": "<p>Users forename.</p>"
           },
           {
             "group": "Parameter",
@@ -236,7 +236,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n  message: 'User updated!',\n  \"user\": {\n      \"email\": \"Ben@ben.com\",\n      \"forname\": \"Ben\",\n      \"surname\": \"Thomas\",\n      \"created\": \"2017-11-05T13:18:02\"\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  message: 'User updated!',\n  \"user\": {\n      \"email\": \"Ben@ben.com\",\n      \"forename\": \"Ben\",\n      \"surname\": \"Thomas\",\n      \"created\": \"2017-11-05T13:18:02\"\n  }\n}",
           "type": "json"
         }
       ]

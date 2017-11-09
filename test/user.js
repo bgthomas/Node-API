@@ -41,7 +41,7 @@ describe('Users', () => {
         it('it should GET user by supplied id', (done) => {
             let user = new User({
                 email: "ben@ben.com",
-                forname: "Ben",
+                forename: "Ben",
                 surname: "thomas"
             });
             user.save((err, user) => {
@@ -51,7 +51,7 @@ describe('Users', () => {
                         res.should.have.status(200);
                         res.body.should.be.a('object');
                         res.body.should.have.property('email');
-                        res.body.should.have.property('forname');
+                        res.body.should.have.property('forename');
                         res.body.should.have.property('surname');
                         res.body.should.have.property('_id').eql(user.id);
                         done();
@@ -67,7 +67,7 @@ describe('Users', () => {
         it('it should POST a user', (done) => {
             let user = {
                 email: "ben@ben.com",
-                forname: "Ben",
+                forename: "Ben",
                 surname: "Thomas"
             }
             chai.request(server)
@@ -78,7 +78,7 @@ describe('Users', () => {
                     res.body.should.be.a('object');
                     res.body.should.have.property('message').eql('User created!');
                     res.body.user.should.have.property('email');
-                    res.body.user.should.have.property('forname');
+                    res.body.user.should.have.property('forename');
                     res.body.user.should.have.property('surname');
                     done();
                 });
@@ -92,7 +92,7 @@ describe('Users', () => {
         it('it should DELETE user by supplied id', (done) => {
             let user = new User({
                 email: "ben@ben.com",
-                forname: "Ben",
+                forename: "Ben",
                 surname: "thomas"
             });
             user.save((err, user) => {
@@ -116,19 +116,19 @@ describe('Users', () => {
         it('it should UPDATE a user given an id', (done) => {
             let user = new User({
                 email: "ben@ben.com",
-                forname: "Ben",
+                forename: "Ben",
                 surname: "Thomas"
             });
             user.save((err, user) => {
                 chai.request(server)
                     .put('/api/users/' + user.id)
-                    .send({ email: "pip@pip.com", forname: "Pippa", surname: "Thomas" })
+                    .send({ email: "pip@pip.com", forename: "Pippa", surname: "Thomas" })
                     .end((err, res) => {
                         res.should.have.status(200);
                         res.body.should.be.a('object');
                         res.body.should.have.property('message').eql('User updated!');
                         res.body.user.should.have.property('email').eql('pip@pip.com');
-                        res.body.user.should.have.property('forname').eql('Pippa');
+                        res.body.user.should.have.property('forename').eql('Pippa');
                         res.body.user.should.have.property('surname').eql('Thomas');
                         done();
                     });
